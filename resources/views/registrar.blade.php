@@ -3,12 +3,14 @@
 
 @section('contenido')
 
+@$nombre = '';
+
 <!-- MENSAJE SWEETALERT -->
-@if(session()->has('confirmacion'))
+if(session()->has('autorizo'))
         {!!"<script>
             Swal.fire(
-            'Bien Hecho Chavo Cardenal!',
-            'Preciona el botón para continuar!',
+            'Todo Correcto!',
+            'El Libro' + $nombre + ' se guardo correctamente!',
             'success')
         </script>"!!}
     @endif
@@ -33,13 +35,14 @@
     @endif
 
 <!-- FORMULARIO -->
-    <form class="m-2" method="post" action="GuardarForm">
+    <form class="m-2" method="post" action="RegistrarLibro">
 
 <!-- TOKEN -->
     @csrf
         <!-- ISBN -->        
         <div class="form-floating mb-3">
             <input type="number" class="form-control" name="txtISBN" value="{{ old('txtISBN') }}">
+            $nombre = 'txtISBN';
             <label for="floatingInput">ISBN</label>
                 <p class="fst-italic text-danger">
                     {{ $errors->first('txtISBN') }}
