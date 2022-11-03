@@ -3,20 +3,29 @@
 
 @section('contenido')
 
-<div class="container mt-4 mb-4">
+    <style>
+        card{
+            background: #FFEFBA;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+    </style>
+
+<div class="container shadow-lg p-3 mt-5 mb-5 bg-body rounded">
     <div class="card">
-        <div class="card-header">
-            Biblioteca Virtual
+        <div class="card-header fw-bold fs-3">
+            BIBLIOTECA VIRTUAL
         </div>
     <div class="card-body">
         <h5 class="card-title">Accede a nuestra librería virtual</h5>
         <p class="card-text">Contamos con más de 5,000 libros disponibles</p>
         <a href="https://bibliotecavirtualdemexico.cultura.gob.mx/" class="btn btn-primary">Ir a...</a>
     </div>
-
-    <div class="card">
-        <div class="card-header">
-            Noticia Literaria
+</div>
+<br>
+<div class="card">
+        <div class="card-header fw-bold fs-3">
+            NOTICIA LITERARIA
         </div>
     <div class="card-body">
         <h5 class="card-title">Observa nuestras noticias literarias</h5>
@@ -48,9 +57,8 @@
             </div>
         </div>
         </div>
-
-
     </div>
+</div>
 
 </div>
 </div>

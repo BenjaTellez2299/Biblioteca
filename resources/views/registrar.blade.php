@@ -3,14 +3,11 @@
 
 @section('contenido')
 
-@$nombre = '';
-
-<!-- MENSAJE SWEETALERT -->
-if(session()->has('autorizo'))
+    @if(session()->has('autorizo'))
         {!!"<script>
             Swal.fire(
             'Todo Correcto!',
-            'El Libro' + $nombre + ' se guardo correctamente!',
+            'El Libro se guardo correctamente!',
             'success')
         </script>"!!}
     @endif
@@ -42,7 +39,6 @@ if(session()->has('autorizo'))
         <!-- ISBN -->        
         <div class="form-floating mb-3">
             <input type="number" class="form-control" name="txtISBN" value="{{ old('txtISBN') }}">
-            $nombre = 'txtISBN';
             <label for="floatingInput">ISBN</label>
                 <p class="fst-italic text-danger">
                     {{ $errors->first('txtISBN') }}
@@ -90,7 +86,7 @@ if(session()->has('autorizo'))
         </div>
 
         <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-outline-success m-2">Ingresar Datos del Libro</button>
+            <button type="submit" class="btn btn-success m-2">Ingresar Datos del Libro</button>
         </div>
             
     </form> 
