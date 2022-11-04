@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class controladorBiblioteca extends Controller
 {
     public function registrarLibro(validarLibro $req){
-        return redirect('registrar')->with('autorizo','Se guardo correctamente');
+        return redirect('registrar')
+        ->with('autorizo','Se guardo correctamente')
+        ->with('txtTitu', $req->txtTitu);
     }
 
     public function showInicio(){
