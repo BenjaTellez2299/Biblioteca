@@ -47,9 +47,14 @@
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="registrar">Registrar Libro</a>
             </li>
+
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="registrarAut">Registrar Autores</a>
+            </li>
         
         </ul>       
         </div>
+
     </div>
 </nav>
 

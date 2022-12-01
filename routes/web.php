@@ -16,8 +16,12 @@ route::controller(controladorBiblioteca::class)->group(
     function (){
         Route::get('inicio', 'showInicio')->name('apodoIni');
         Route::get('registrar', 'showRegistrar')->name('apodoRegis');
+        Route::get('registrarAut','showRegistrarAut')->name('showAut');
     }
 );
 
 //RUTA FORMULARIO
 Route::post('RegistrarLibro', [controladorBiblioteca::class, 'registrarLibro'])->name('regisLibro');
+
+//RUTA FORMULARIO AUTOR
+Route::post('RegistrarAutor', [controladorBiblioteca::class, 'registrarAutor'])->name('regisAutor');
