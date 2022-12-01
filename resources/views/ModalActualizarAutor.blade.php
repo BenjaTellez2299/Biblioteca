@@ -8,6 +8,17 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
+    <!-- ERROR INCOMPLETO -->
+    @if($errors->any())
+
+        @foreach($errors->all() as $error)
+        <div class="alert alert-danger" role="alert">
+            Checa tus Datos el Error es: {{$error}}
+        </div>
+        @endforeach
+
+    @endif
+
         <div class="modal-body">
 
             <form class="m-2" method="post" action="{{ route('autor.update', $consulta->idAutor) }}">

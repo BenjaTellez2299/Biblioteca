@@ -53,7 +53,7 @@ class controladorLibros extends Controller
         return $consultaId;
     }
 
-    public function update(Request $request, $id)
+    public function update(validarLibro $request, $id)
     {
         DB::table('tb_libros')->where('idLibro',$id)->update([
             "isbn" => $request -> input('txtISBN'),

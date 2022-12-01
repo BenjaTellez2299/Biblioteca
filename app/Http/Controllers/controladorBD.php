@@ -46,7 +46,7 @@ class controladorBD extends Controller
         return view('ModalActualizarAutor', compact('consultaId'));
     }
 
-    public function update(Request $request, $id)
+    public function update(validarAutor $request, $id)
     {
         DB::table('tb_autores')->where('idAutor',$id)->update([
             "Nombre" => $request -> input('txtName'),
