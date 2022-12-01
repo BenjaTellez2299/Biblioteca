@@ -27,10 +27,11 @@ Route::post('recuerdo',[controladorBD::class,'store'])->name('recuerdo.store');
 //RUTAS CONSULTAR BD
 Route::get('recuerdo',[controladorBD::class,'index'])->name('recuerdo.index');
 
+//RUTA DEL UPDATE BD
+Route::put('recuerdo/{id}',[controladorBD::class,'update'])->name('recuerdo.update');
 
+//RUTA PARA BORRAR BD
+Route::delete('recuerdo/{id}',[controladorBD::class,'destroy'])->name('recuerdo.destroy');
 
 //RUTA FORMULARIO
 Route::post('RegistrarLibro', [controladorBiblioteca::class, 'registrarLibro'])->name('regisLibro');
-
-//RUTA FORMULARIO AUTOR
-Route::post('RegistrarAutor', [controladorBiblioteca::class, 'registrarAutor'])->name('regisAutor');

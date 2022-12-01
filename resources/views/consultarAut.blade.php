@@ -3,13 +3,21 @@
 
 @section('contenido')
 
-    @if(session()->has('autorizo'))
-    <?php $libro = session()->get('txtTitu') ?>
+    @if(session()->has('actualizo'))
         {!!"<script>
             Swal.fire(
-            'Todo Correcto! {$libro}',
-            'El Libro {$libro} se guardo correctamente!',
+            'Su Autor se Actualizó Correctamente',
+            'Presiona el botón para continuar!',
             'success')
+        </script>"!!}
+    @endif
+
+    @if(session()->has('eliminar'))
+        {!!"<script>
+            Swal.fire(
+            'Su Autor se Elimino Correctamente',
+            'Presiona el botón para continuar!',
+            'warning')
         </script>"!!}
     @endif
 
@@ -29,6 +37,18 @@
             <h5 class="card-title">Fecha de Nacimiento: {{$consulta->fecha}}</h5>
             <h5 class="card-title">Libros Publicados: {{$consulta->libros}}</h5>
         </div>
+        
+        <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#ModalActualizarAutor{{$consulta->idAutor}}">
+            Editar Autor
+        </button>
+
+        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#ModalEliminarAutor{{$consulta->idAutor}}">
+            Eliminar Autor
+        </button>
+
+    @include('ModalActualizarAutor')   
+    @include('ModalEliminarAutor')    
+
     </div>
     @endforeach
    

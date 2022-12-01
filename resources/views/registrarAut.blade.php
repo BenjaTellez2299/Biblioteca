@@ -11,7 +11,7 @@
         {!!"<script>
             Swal.fire(
             'Tu Autor se Guardo Correctamente!',
-            'Preciona el botón para continuar!',
+            'Presiona el botón para continuar!',
             'success')
         </script>"!!}
     @endif

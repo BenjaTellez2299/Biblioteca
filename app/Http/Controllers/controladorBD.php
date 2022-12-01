@@ -41,16 +41,27 @@ class controladorBD extends Controller
 
     public function edit($id)
     {
-        //
+        $consultaId= DB::table('tb_autores')->where('idAutor', $id)->first();
+
+        return view('ModalActualizarAutor', compact('consultaId'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        DB::table('tb_autores')->where('idAutor',$id)->update([
+            "Nombre" => $request -> input('txtName'),
+            "fecha" => $request -> input('date'),
+            "libros" => $request -> input('number'),
+            "updated_at" => Carbon::now()
+        ]);
+
+        return redirect('recuerdo')->with('actualizo','Recuerdo Actualizado Correctamente');
     }
 
     public function destroy($id)
     {
-        //
+        DB::table('tb_autores')->where('idAutor',$id)->delete();
+
+        return redirect('recuerdo')->with('eliminar','Recuerdo Eliminado Correctamente');
     }
 }
