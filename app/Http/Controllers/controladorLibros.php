@@ -25,9 +25,9 @@ class controladorLibros extends Controller
     public function store(validarLibro $request)
     {
         DB::table('tb_libros')->insert([
+            "idautor" => $request -> input('txtAutor'),
             "isbn" => $request -> input('txtISBN'),
             "titulo" => $request -> input('txtTitu'),
-            "idautor" => $request -> input('txtAutor'),
             "paginas" => $request -> input('txtPag'),
             "editorial" => $request -> input('txtEdit'),
             "correo" => $request -> input('txtEmail'),

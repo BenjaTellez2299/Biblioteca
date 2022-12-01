@@ -9,8 +9,8 @@
     @if(session()->has('autorizo'))
         {!!"<script>
             Swal.fire(
-            'Todo Correcto! {$libro}',
-            'El Libro {$libro} se guardo correctamente!',
+            'Todo Correcto!',
+            'El Libro se guardo correctamente!',
             'success')
         </script>"!!}
     @endif
@@ -52,10 +52,10 @@
         <!-- AUTOR -->
         <label for="floatingInput">Autor del Libro</label>
         <div class="form-floating mb-3">
-            <select class="form-select" aria-label="Default select example">
-                <option selected disabled>Seleccione un autor...</option>
+            <select class="form-select" aria-label="Default select example" name="txtAutor">
+                <option selected disabled="disabled">Seleccione un autor...</option>
                 @foreach($consultaAutor as $consulta)
-                <option name="txtAutor" value="{{$consulta->idAutor}}">{{$consulta->Nombre}}</option>
+                    <option value="{{$consulta->idAutor}}">{{$consulta->Nombre}}</option>
                 @endforeach
             </select>
         </div>

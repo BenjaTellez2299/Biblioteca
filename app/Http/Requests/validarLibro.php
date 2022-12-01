@@ -16,7 +16,6 @@ class validarLibro extends FormRequest
         return [
             'txtISBN'=>'required|min:13',
             'txtTitu'=>'required|max:50',
-            'txtAutor'=>'required',
             'txtPag'=>'required|integer',
             'txtEdit'=>'required|max:50',
             'txtEmail'=>'required|email:rfc,dns'

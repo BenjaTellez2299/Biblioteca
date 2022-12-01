@@ -16,11 +16,13 @@
                 @method('delete')
 
                 <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="txtName" value="{{ $consulta->titulo }}" disabled>
+                    <label for="floatingInput">Libro:</label>
+                </div>
+
+                <div class="form-floating mb-3">
                     <input type="text" class="form-control" name="txtName" value="{{ $consulta->Nombre }}" disabled>
-                    <label for="floatingInput">Nombre</label>
-                        <p class="fst-italic text-danger">
-                            {{ $errors->first('txtName') }}
-                        </p>
+                    <label for="floatingInput">Autor:</label>
                 </div>
 
             <div class="modal-footer">
