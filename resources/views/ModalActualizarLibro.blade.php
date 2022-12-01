@@ -35,8 +35,10 @@
                 <label for="floatingInput">Autor del Libro</label>
                 <div class="form-floating mb-3">
                     <select class="form-select" aria-label="Default select example" name="txtAutor">
-                        <option selected disabled="disabled">Seleccione un autor...</option>
-                        
+                            <option selected value="{{$consulta->idAutor}}">{{$consulta->Nombre}}</option>
+                            @foreach($consultaAutores as $consultaAutor)
+                                <option value="{{$consultaAutor->idAutor}}">{{$consultaAutor->Nombre}}</option>
+                            @endforeach
                     </select>
                 </div>
                 <!-- PÁGINAS -->

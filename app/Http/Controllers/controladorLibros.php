@@ -13,8 +13,9 @@ class controladorLibros extends Controller
     public function index()
     {
         $consultaLibro=DB::select('SELECT * FROM tb_libros L INNER JOIN tb_autores A ON A.idAutor = L.idautor');
+        $consultaAutores=DB::table('tb_autores')->get();
 
-        return view("consultarLib",compact('consultaLibro'));
+        return view("consultarLib",compact('consultaLibro','consultaAutores'));
     }
 
     public function create()
@@ -49,7 +50,7 @@ class controladorLibros extends Controller
     {
         $consultaId=DB::select('SELECT * FROM tb_libros L INNER JOIN tb_autores A ON A.idAutor = L.idautor');
 
-        return view('ModalActualizarLibro', compact('consultaId'));
+        return $consultaId;
     }
 
     public function update(Request $request, $id)
@@ -64,7 +65,7 @@ class controladorLibros extends Controller
             "updated_at" => Carbon::now()
         ]);
 
-        return redirect('autor')->with('actualizo','Autor Actualizado Correctamente');
+        return redirect('libro')->with('actualizo','Autor Actualizado Correctamente');
     }
 
     public function destroy($id)
