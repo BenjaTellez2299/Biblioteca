@@ -7,10 +7,13 @@
     <p class="fs-5">Formulario nuevo Autor</p>
 
 <!-- AUTORIZO EL FORMULARIO -->    
-    @if(session()->has('confirmo'))
-    <div class="alert alert-info" role="alert">
-        Se agregó correctamente al Autor
-    </div>
+    @if(session()->has('autorizo'))
+        {!!"<script>
+            Swal.fire(
+            'Tu Autor se Guardo Correctamente!',
+            'Preciona el botón para continuar!',
+            'success')
+        </script>"!!}
     @endif
 
 <!-- ERROR INCOMPLETO -->
@@ -27,7 +30,7 @@
     <div class="container">
 
 <!-- FORMULARIO -->
-    <form class="m-2" method="post" action="RegistrarAutor">
+    <form class="m-2" method="post" action="{{route('recuerdo.store')}}">
 
 <!-- TOKEN -->
     @csrf

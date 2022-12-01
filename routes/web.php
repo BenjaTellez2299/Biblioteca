@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorBiblioteca;
+use App\Http\Controllers\controladorBD;
 
 //Route::get('/inicio', function () {
 //    return view('inicio');
@@ -19,6 +20,14 @@ route::controller(controladorBiblioteca::class)->group(
         Route::get('registrarAut','showRegistrarAut')->name('showAut');
     }
 );
+
+//RUTAS ENVIO POST
+Route::post('recuerdo',[controladorBD::class,'store'])->name('recuerdo.store');
+
+//RUTAS CONSULTAR BD
+Route::get('recuerdo',[controladorBD::class,'index'])->name('recuerdo.index');
+
+
 
 //RUTA FORMULARIO
 Route::post('RegistrarLibro', [controladorBiblioteca::class, 'registrarLibro'])->name('regisLibro');

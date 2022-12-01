@@ -49,9 +49,17 @@
             </li>
 
             <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{route('recuerdo.index')}}">Consultar Autores</a>
+            </li>
+
+            <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="registrarAut">Registrar Autores</a>
             </li>
         
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="registrarAut">Consultar Autores</a>
+            </li>
+
         </ul>       
         </div>
 
