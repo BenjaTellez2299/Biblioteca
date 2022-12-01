@@ -24,7 +24,7 @@ class controladorBiblioteca extends Controller
     }
 
     public function showRegistrar(){
-        return view('registrar');
+        return view('registrarLib');
     }
     
     public function showRegistrarAut(){

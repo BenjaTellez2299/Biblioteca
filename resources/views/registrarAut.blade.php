@@ -30,7 +30,7 @@
     <div class="container">
 
 <!-- FORMULARIO -->
-    <form class="m-2" method="post" action="{{route('recuerdo.store')}}">
+    <form class="m-2" method="post" action="{{route('autor.store')}}">
 
 <!-- TOKEN -->
     @csrf

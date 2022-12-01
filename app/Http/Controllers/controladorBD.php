@@ -55,13 +55,13 @@ class controladorBD extends Controller
             "updated_at" => Carbon::now()
         ]);
 
-        return redirect('recuerdo')->with('actualizo','Recuerdo Actualizado Correctamente');
+        return redirect('autor')->with('actualizo','Autor Actualizado Correctamente');
     }
 
     public function destroy($id)
     {
         DB::table('tb_autores')->where('idAutor',$id)->delete();
 
-        return redirect('recuerdo')->with('eliminar','Recuerdo Eliminado Correctamente');
+        return redirect('autor')->with('eliminar','Autor Eliminado Correctamente');
     }
 }

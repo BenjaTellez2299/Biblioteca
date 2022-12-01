@@ -45,11 +45,11 @@
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="registrar">Registrar Libro</a>
+            <a class="nav-link active" aria-current="page" href="registrarLib">Registrar Libro</a>
             </li>
 
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{route('recuerdo.index')}}">Consultar Autores</a>
+            <a class="nav-link active" aria-current="page" href="{{route('libro.index')}}">Consultar Libro</a>
             </li>
 
             <li class="nav-item">
@@ -57,7 +57,7 @@
             </li>
         
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="registrarAut">Consultar Autores</a>
+            <a class="nav-link active" aria-current="page" href="{{route('autor.index')}}">Consultar Autores</a>
             </li>
 
         </ul>       

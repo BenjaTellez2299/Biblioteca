@@ -10,30 +10,26 @@
 
         <div class="modal-body">
 
-            <form class="m-2" method="post" action="{{ route('recuerdo.update', $consulta->idAutor) }}">
+            <form class="m-2" method="post" action="{{ route('autor.update', $consulta->idAutor) }}">
                 @csrf
 
                 {!!method_field('PUT')!!}
 
-                <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">Nombre:</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="txtName" value="{{ $consulta->Nombre }}">
-                                <p class="fst-italic text-danger">
-                                    {{ $errors->first('txtName') }}
-                                </p>
-                        </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="txtName" value="{{ $consulta->Nombre }}">
+                    <label for="floatingInput">Nombre</label>
+                        <p class="fst-italic text-danger">
+                            {{ $errors->first('txtName') }}
+                        </p>
                 </div>
 
-                <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">Fecha Nacimiento:</label>
-                        <div class="col-sm-10">
-                            <input type="date" class="form-control" name="date" value="{{ $consulta->fecha }}">
-                                <p class="fst-italic text-danger">
-                                    {{ $errors->first('date') }}
-                                </p>
-                        </div>
-                </div> 
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control" name="date" value="{{ $consulta->fecha }}">
+                    <label for="floatingInput">Fecha Nacimiento</label>
+                        <p class="fst-italic text-danger">
+                            {{ $errors->first('date') }}
+                        </p>
+                </div>
 
                 <div class="form-floating mb-3">
                     <input type="number" class="form-control" name="number" value="{{ $consulta->libros }}">
